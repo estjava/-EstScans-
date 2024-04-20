@@ -12,9 +12,6 @@
   ]]></b:skin>
   <b:template-skin></b:template-skin>
 
-  <b:if cond='data:skin.vars.body_background.image.isResizable'>
-    <b:include cond='not data:view.isPreview' data='{ image: data:skin.vars.body_background.image, selector: "body" }' name='responsiveImageStyle'/>
-  </b:if>
   <b:include data='blog' name='google-analytics'/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
