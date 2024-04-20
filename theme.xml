@@ -1,31 +1,116 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
-<html xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<html b:css='false' b:defaultwidgetversion='2' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
 <head>
-  <meta expr:content='data:blog.isMobile ? "width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" : "width=1100"' name='viewport'/>
-  <b:include data='blog' name='all-head-content'/>
-
-  <title><data:blog.pageTitle/></title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"/>
+  <!-- Chrome, Firefox OS and Opera -->
+  <meta content='#0c70de' name='theme-color'/>
+  <meta content='#0c70de' name='msapplication-navbutton-color'/>
+  <meta content='yes' name='apple-mobile-web-app-capable'/>
+  <meta content='#0c70de' name='apple-mobile-web-app-status-bar-style'/>
+  <meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+  <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
+  <!-- [ Meta Tag SEO ] -->
+  <meta charset='utf-8'/>
+  <meta content='blogger' name='generator'/>
+  <link expr:href='data:blog.url' rel='canonical'/>
+  <b:if cond='data:view.isMultipleItems'>
+    <title><data:blog.pageTitle/></title>
+    <b:else/>
+    <b:if cond='!data:view.isError'>
+      <title><data:blog.pageName/> - <data:blog.title/></title>
+    </b:if>
+  </b:if>
+  <b:if cond='data:view.isError'>
+    <title>404 - Halaman tidak ditemukan!</title>
+  </b:if>
+  <b:if cond='!data:view.isError'>
+    <b:if cond='!data:view.isHomepage'>
+      <meta expr:content='data:blog.pageName + &quot;, &quot; + data:blog.pageTitle + &quot;, &quot; + data:blog.title' name='keywords'/>
+    </b:if>
+  </b:if>
+  <b:if cond='data:view.isHomepage'>
+    <meta content='xxxx' name='keywords'/>
+    <meta content='xxxx' name='description'/>
+  </b:if>
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css' rel='stylesheet'/>
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css' rel='stylesheet'/>
   <b:skin><![CDATA[ 
-
+.bg-header{background: #0c70de;}
   ]]></b:skin>
-  <b:template-skin></b:template-skin>
-
   <b:include data='blog' name='google-analytics'/>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'/>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js'/>
 </head>
 <body>
-<b:section class='navbar' id='navbar' maxwidgets='1' name='Navbar' showaddelement='no'>
-<b:widget id='Header1' title='BLOG_NAME (header)' type='Header' version='2'>
-<b:widget-settings></b:widget-settings>
-<b:includable id='main' var='this'></b:includable>
-<b:includable id='behindImageStyle'></b:includable>
-<b:includable id='description'></b:includable>
-<b:includable id='image'></b:includable>
-<b:includable id='title'></b:includable>
-</b:widget>
-</b:section>
+  <nav class='navbar navbar-expand-lg bg-header'>
+    <div class='container-fluid'>
+      <b:section class='navbar-brand' id='navbar-brand' maxwidgets='1' name='Header' showaddelement='no'>
+        <b:widget id='Header1' locked='false' title='EstMods (Header)' type='Header' version='2' visible='true'>
+          <b:widget-settings>
+            <b:widget-setting name='displayUrl'/>
+            <b:widget-setting name='displayHeight'>0</b:widget-setting>
+            <b:widget-setting name='sectionWidth'>-1</b:widget-setting>
+            <b:widget-setting name='useImage'>false</b:widget-setting>
+            <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
+            <b:widget-setting name='imagePlacement'>BEHIND</b:widget-setting>
+            <b:widget-setting name='displayWidth'>0</b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main' var='this'>
+            <div class='header-widget'>
+              <b:include cond='data:imagePlacement in {&quot;REPLACE&quot;, &quot;BEFORE_DESCRIPTION&quot;}' name='image'/>
+              <b:include cond='data:imagePlacement not in {&quot;REPLACE&quot;, &quot;BEFORE_DESCRIPTION&quot;}' name='title'/>
+            </div>
+            <b:include cond='data:imagePlacement == &quot;BEHIND&quot;' name='behindImageStyle'/>
+          </b:includable>
+          <b:includable id='behindImageStyle'/>
+          <b:includable id='description'>
+            <p><data:this.description/></p>
+          </b:includable>
+          <b:includable id='image'>
+            <a class='header-image-wrapper' expr:href='data:blog.homepageUrl'>
+              <b:include data='{ image: data:image, altText: data:blog.title.escaped, originalWidth: data:width, originalHeight: data:height }' name='responsiveImage'/>
+            </a>
+          </b:includable>
+          <b:includable id='title'>
+            <h1>
+              <b:tag cond='data:view.url != data:blog.homepageUrl' expr:href='data:blog.homepageUrl' name='a'>
+                <data:title/>
+              </b:tag>
+            </h1>
+          </b:includable>
+        </b:widget>
+      </b:section>
+      <div class='me-auto mb-2 mb-lg-0' id='nav-menu'>
+        <ul class='navbar-nav'>
+          <li class='nav-item'><a class='nav-link' expr:href='data:blog.homepageUrl'>Home</a></li>
+          <li class='nav-item'><a class='nav-link' href='#'>Link</a></li>
+          <li class='nav-item'><a class='nav-link' href='#'>Link</a></li>
+          <li class='nav-item'><a class='nav-link' href='#'>Link</a></li>
+          <li class='nav-item'><a class='nav-link' href='#'>Link</a></li>
+        </ul>
+      </div>
+      <b:section class='navbar-search' id='navbar-search' name='Search'>
+        <b:widget id='BlogSearch1' locked='false' title='WIDGET_TITLE' type='BlogSearch' version='2' visible='true'>
+          <b:includable id='main'>
+            <b:include name='searchForm'/>
+          </b:includable>
+          <b:includable id='content'/>
+          <b:includable id='searchForm'>
+            <form class='d-flex' expr:action='data:blog.searchUrl' role='search'>
+              <b:attr cond='not data:view.isPreview' name='target' value='_top'/>
+              <b:include name='urlParamsAsFormInput'/>
+              <input autocomplete='off' class='form-control me-2' expr:aria-label='data:messages.search' expr:placeholder='data:messages.search' expr:value='data:view.isSearch ? data:view.search.query.escaped : &quot;&quot;' name='q'/>
+              <b:include name='searchSubmit'/>
+            </form>
+          </b:includable>
+          <b:includable id='searchSubmit'>
+            <button class='btn btn-success' type='submit'><i class='fa fa-search'/></button>
+          </b:includable>
+        </b:widget>
+      </b:section>
+    </div>
+  </nav>
+  <b:section class='main' id='main'/>
 </body>
 </html>
