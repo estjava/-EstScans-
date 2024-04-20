@@ -2,10 +2,33 @@
 <!DOCTYPE html>
 <html xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
 <head>
-<title>Jasa Pembuatan Website Toko Online Murah </title>
-<b:skin><![CDATA[ ]]></b:skin>
+  <meta expr:content='data:blog.isMobile ? "width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" : "width=1100"' name='viewport'/>
+  <b:include data='blog' name='all-head-content'/>
+
+  <title><data:blog.pageTitle/></title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"/>
+  <b:skin><![CDATA[ 
+
+  ]]></b:skin>
+  <b:template-skin></b:template-skin>
+
+  <b:if cond='data:skin.vars.body_background.image.isResizable'>
+    <b:include cond='not data:view.isPreview' data='{ image: data:skin.vars.body_background.image, selector: "body" }' name='responsiveImageStyle'/>
+  </b:if>
+  <b:include data='blog' name='google-analytics'/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-<b:section id='contoh'/>
+<b:section class='navbar' id='navbar' maxwidgets='1' name='Navbar' showaddelement='no'>
+<b:widget id='Header1' title='BLOG_NAME (header)' type='Header' version='2'>
+<b:widget-settings></b:widget-settings>
+<b:includable id='main' var='this'></b:includable>
+<b:includable id='behindImageStyle'></b:includable>
+<b:includable id='description'></b:includable>
+<b:includable id='image'></b:includable>
+<b:includable id='title'></b:includable>
+</b:widget>
+</b:section>
 </body>
 </html>
