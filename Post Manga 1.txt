@@ -1,0 +1,85 @@
+<div class="bixbox animefull">
+<div class="bigcontent nobigcover">
+<div class="thumbook">
+<div class="thumb" itemprop="image" itemscope="" itemtype="https://schema.org/ImageObject">
+<img src='https://media.omegascans.org/file/zFSsXt/covers/c1543721-cb0e-49f7-b073-956d0bf7ecc9.jpg'/>
+</div>
+<div class="rt">
+<div class="tsinfo">
+<div class="imptdt">
+Status <i>Ongoing</i>
+</div>
+<div class="imptdt">
+Type <a href="/search/label/Manhwa">Manhwa</a>
+</div>
+</div>
+</div>
+</div>
+<div class="infox">
+<h1 class="entry-title" itemprop="name">Slave Knight of the Elf</h1>
+<div class="wd-full">
+<h2>Sinopsis</h2>
+<div class="entry-content entry-content-single" itemprop="description">
+<p>I’ve been caught by the evil elves. What was awaiting me was a life far worse than death… is what I thought… The instinct of an elf is the desire for strong men?! What? And the ratio of male to female elves is 2 to 8!? How will I, Yushin Gilliard, escape this situation…?!</p>
+</div>
+</div>
+<div class="flex-wrap">
+<div class="fmed">
+<b>Alternative</b>
+<span>엘프의 노예기사</span>
+</div>
+<div class="fmed">
+</div>
+</div>
+<div class="flex-wrap">
+<div class="fmed">
+<b>Author(s)</b>
+<span> HONG BAN JANG</span>
+</div>
+<div class="fmed">
+<b>Artist(s)</b>
+<span>MangMoongMing</span>
+</div>
+</div>
+<div class="flex-wrap">
+<div class="fmed">
+<b>Produced</b>
+<span>Toptoon</span>
+</div>
+<div class="fmed">
+<b>Released</b>
+<span>2022</span>
+</div>
+</div>
+<div class="wd-full"><b>Genres</b><span class="mgen"><a href='/search/label/Adult'>Adult</a> <a href='/search/label/Fantasy'>Fantasy</a> <a href='/search/label/Harem'>Harem</a></span>
+</div>
+</div>
+</div>
+</div>
+
+<div class="bixbox bxcl epcheck">
+<div class="releases">
+<h2>Slave Knight of the Elf Chapter</h2>
+</div>
+<div class="eplister" id="chapterlist">
+<script type="text/javascript">
+function recentpostslist(json) {
+ document.write('<ul>');
+ for (var i = 0; i < json.feed.entry.length; i++)
+ {
+    for (var j = 0; j < json.feed.entry[i].link.length; j++) {
+      if (json.feed.entry[i].link[j].rel == 'alternate') {
+        break;
+      }
+    }
+var entryUrl = "'" + json.feed.entry[i].link[j].href + "'";//bs
+var entryTitle = json.feed.entry[i].title.$t;
+var item = "<li><div class='chbox'><div class='eph-num'>" + "<a href="+ entryUrl + '" target="_blank"><span class="chapternum">' + entryTitle + "</span></a></div></div></li>";
+ document.write(item);
+ }
+ document.write('</ul>');
+ }
+</script>
+<script src="https://estscanslation.blogspot.com//feeds/posts/summary/-/Slave Knight of the Elf?max-results=9999&alt=json-in-script&callback=recentpostslist"></script>
+</div>
+</div>
